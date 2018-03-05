@@ -20,15 +20,11 @@ class RequestInterceptor constructor(private val networkService: NetworkService)
             val request = chain.request()
             val response = chain.proceed(request)
 
-            val responseCode = response.code()
-            val requestEndpoint = request.url().toString()
-            val errorMsg = { "API $responseCode @ $requestEndpoint" }
-
             when (response.code()) {
-                400 -> throw BadRequestException(errorMsg())
+                400 -> throw BadRequestException()
                 404 -> throw NoDataException()
-                401,402,403,in 400..499 -> throw Error4XXException(errorMsg())
-                in 500..599 -> throw Error5XXException(errorMsg())
+                401,402,403,in 400..499 -> throw Error4XXException()
+                in 500..599 -> throw Error5XXException()
                 else -> response
             }
         } catch (e: Exception) {
