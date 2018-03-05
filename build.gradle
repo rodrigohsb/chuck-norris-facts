@@ -25,3 +25,13 @@ allprojects {
 task clean(type: Delete) {
     delete rootProject.buildDir
 }
+
+ext {
+    compileSdkVersion = 27
+    supportVersion = '27.1.0'
+    retrofitVersion = '2.3.0'
+    okHttpInterceptorVersion = '3.8.0'
+    kotlinVersion = '1.2.20'
+    kodeinVersion = '4.1.0'
+    archLifecycleExtensionsVersion = '1.1.0'
+}
