@@ -3,7 +3,9 @@ package br.com.chucknorrisfacts.di
 import android.content.Context
 import android.net.ConnectivityManager
 import br.com.chucknorrisfacts.BuildConfig
+import br.com.chucknorrisfacts.home.handler.FactHandler
 import br.com.chucknorrisfacts.home.service.HomeService
+import br.com.chucknorrisfacts.home.viewmodel.HomeViewModel
 import br.com.chucknorrisfacts.webservice.NetworkService
 import br.com.chucknorrisfacts.webservice.RequestInterceptor
 import br.com.chucknorrisfacts.webservice.WebServiceAPI
@@ -30,6 +32,14 @@ class Injector(context: Context) {
 
         bind<HomeService>() with provider {
             HomeService(webServiceAPI = instance())
+        }
+
+        bind<FactHandler>() with provider {
+            FactHandler()
+        }
+
+        bind<HomeViewModel>() with provider {
+            HomeViewModel(homeService = instance(), factHandler = instance())
         }
 
         bind<Interceptor>(tag = LOG_INTERCEPTOR) with provider {

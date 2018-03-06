@@ -37,7 +37,4 @@ ext {
     mockitoCoreVersion = '2.12.0'
     mockitoAndroidVersion = '2.9.0'
     mockitoKotlinVersion = '1.5.0'
-    kotlinVersion = '1.2.20'
-    kodeinVersion = '4.1.0'
-    archLifecycleExtensionsVersion = '1.1.0'
 }

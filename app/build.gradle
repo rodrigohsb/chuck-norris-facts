@@ -59,7 +59,9 @@ dependencies {
     androidTestImplementation 'com.android.support.test:runner:1.0.1'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
     implementation "org.mockito:mockito-core:${mockitoCoreVersion}"
-    androidTestImplementation "org.mockito:mockito-android:${mockitoAndroidVersion}"
-    testImplementation "com.nhaarman:mockito-kotlin-kt1.1:${mockitoKotlinVersion}"
     implementation "com.squareup.okhttp3:mockwebserver:${okHttpVersion}"
+    testImplementation "com.nhaarman:mockito-kotlin-kt1.1:${mockitoKotlinVersion}"
+    androidTestImplementation "org.mockito:mockito-android:${mockitoAndroidVersion}"
+    testImplementation "android.arch.core:core-testing:${archLifecycleExtensionsVersion}"
+//    testImplementation 'org.mockito:mockito-all:1.10.19'
 }
