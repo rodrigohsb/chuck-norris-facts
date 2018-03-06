@@ -11,9 +11,8 @@ import io.reactivex.schedulers.Schedulers
  */
 class HomeService(private val webServiceAPI: WebServiceAPI) {
 
-    fun searchFacts(query: String) : Observable<SearchPayload> {
-        return webServiceAPI.getFactBySearch(query)
+    fun searchFacts(query: String) : Observable<SearchPayload> =
+            webServiceAPI.getFactBySearch(query)
                 .subscribeOn(Schedulers.io())
-                .observeOn(AndroidSchedulers.mainThread())
-    }
+                    .observeOn(AndroidSchedulers.mainThread())
 }
