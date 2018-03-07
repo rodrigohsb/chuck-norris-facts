@@ -1,6 +1,5 @@
 package br.com.chucknorrisfacts.home.ui
 
-import android.arch.lifecycle.Observer
 import android.arch.lifecycle.ViewModel
 import android.arch.lifecycle.ViewModelProvider
 import android.arch.lifecycle.ViewModelProviders
@@ -11,10 +10,10 @@ import android.support.v7.widget.SearchView
 import android.view.View
 import br.com.chucknorrisfacts.R
 import br.com.chucknorrisfacts.base.BaseActivity
-import br.com.chucknorrisfacts.webservice.exceptions.*
 import br.com.chucknorrisfacts.home.adapter.HomeAdapter
-import br.com.chucknorrisfacts.home.status.HomeStatus
+import br.com.chucknorrisfacts.home.status.State
 import br.com.chucknorrisfacts.home.viewmodel.HomeViewModel
+import br.com.chucknorrisfacts.webservice.exceptions.*
 import com.github.salomonbrys.kodein.LazyKodein
 import com.github.salomonbrys.kodein.android.appKodein
 import com.github.salomonbrys.kodein.instance
@@ -67,38 +66,36 @@ class HomeActivity : BaseActivity() {
 
     private fun initObserver() {
 
-        viewModel.homeStatus.observe(this,
-                Observer<HomeStatus> { status ->
+        viewModel.fetchState()
+                .subscribe{ status: State ->
                     clearView()
                     when (status) {
-                        is HomeStatus.Loading -> showLoadingView()
-                        is HomeStatus.WaitingForInput -> {
-                        }
-                        is HomeStatus.Error -> {
-                            showEmptyView()
-                            processError(status.exception)
-                        }
-                        is HomeStatus.Content -> {
-
-                            showSize(status.searchFactsEntryModel.size,
-                                    status.searchFactsEntryModel.query)
-
-                            homeAdapter.clear()
-                            homeAdapter.addData(status.searchFactsEntryModel.homeEntryModel)
-                            recyclerView.apply {
-                                layoutManager = lManager
-                                adapter = homeAdapter
-                                setHasFixedSize(true)
-                            }
-
-                            recyclerView.visibility = View.VISIBLE
-                        }
+                        is State.Loading -> showLoadingView()
+                        is State.WaitingForInput -> { }
+                        is State.Error -> processError(status)
+                        is State.Sucess -> handleContent(status)
                     }
-                })
+                }
     }
 
-    private fun processError(t: Throwable) {
-        when (t) {
+    private fun handleContent(status: State.Sucess) {
+        showSize(status.searchFactsEntryModel.size,
+                status.searchFactsEntryModel.query)
+
+        homeAdapter.clear()
+        homeAdapter.addData(status.searchFactsEntryModel.homeEntryModel)
+        recyclerView.apply {
+            layoutManager = lManager
+            adapter = homeAdapter
+            setHasFixedSize(true)
+        }
+
+        recyclerView.visibility = View.VISIBLE
+    }
+
+    private fun processError(status: State.Error) {
+        showEmptyView()
+        when (status.exception) {
             is TimeoutException -> textView.text = "TimeoutException"
             is Error4XXException -> textView.text = "Ops,\n não é possível fazer pesquisa com termo."
             is Error5XXException -> textView.text = "Ops!\n Por favor, tente mais tarde."
