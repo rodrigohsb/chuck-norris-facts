@@ -6,10 +6,6 @@ import br.com.chucknorrisfacts.webservice.payload.SearchList
 import br.com.chucknorrisfacts.webservice.payload.SearchPayload
 import com.nhaarman.mockito_kotlin.whenever
 import io.reactivex.Observable.just
-import io.reactivex.android.schedulers.AndroidSchedulers
-import io.reactivex.schedulers.Schedulers
-import org.hamcrest.CoreMatchers.equalTo
-import org.hamcrest.MatcherAssert.assertThat
 import org.junit.Before
 import org.junit.Ignore
 import org.junit.Test
@@ -18,10 +14,10 @@ import org.mockito.MockitoAnnotations.initMocks
 import java.util.*
 
 /**
- * @rodrigohsb
- */
+* @rodrigohsb
+*/
 class HomeServiceTest {
-    
+
     @Mock
     private lateinit var webServiceAPI: WebServiceAPI
 
@@ -77,3 +73,4 @@ class HomeServiceTest {
             }
     }
 }
+

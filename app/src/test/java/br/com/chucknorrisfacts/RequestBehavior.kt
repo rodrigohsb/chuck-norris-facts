@@ -16,10 +16,10 @@ import okhttp3.mockwebserver.SocketPolicy
 import java.util.concurrent.TimeUnit
 
 /**
- * @rodrigohsb
- */
+* @rodrigohsb
+*/
 class RequestBehavior {
-    
+
     private val mockWebServer by lazy { MockWebServer() }
 
     private lateinit var client:OkHttpClient
@@ -56,12 +56,12 @@ class RequestBehavior {
                     .url(httpUrl)
                     .build()
         try{
-                client.newCall(request).execute()
-            }catch (e:Error5XXException) {
-                assert(true)
-            }catch (e:Exception) {
-                assert(false)
-            }
+            client.newCall(request).execute()
+        }catch (e:Error5XXException) {
+            assert(true)
+        }catch (e:Exception) {
+            assert(false)
+        }
     }
 
     @Test
@@ -78,12 +78,12 @@ class RequestBehavior {
                 .url(httpUrl)
                 .build()
         try{
-                client.newCall(request).execute()
-            }catch (e: Error4XXException) {
-                assert(true)
-            }catch (e:Exception) {
-                assert(false)
-            }
+            client.newCall(request).execute()
+        }catch (e: Error4XXException) {
+            assert(true)
+        }catch (e:Exception) {
+            assert(false)
+        }
     }
 
     @Test
@@ -100,12 +100,12 @@ class RequestBehavior {
                 .url(httpUrl)
                 .build()
         try{
-                client.newCall(request).execute()
-            }catch (e:NoNetworkException) {
-                assert(true)
-            }catch (e:Exception) {
-                assert(false)
-            }
+            client.newCall(request).execute()
+        }catch (e:NoNetworkException) {
+            assert(true)
+        }catch (e:Exception) {
+            assert(false)
+        }
     }
 
     @Test
@@ -122,12 +122,12 @@ class RequestBehavior {
                 .url(httpUrl)
                 .build()
         try{
-                client.newCall(request).execute()
-            }catch (e: NoDataException) {
-                assert(true)
-            }catch (e:Exception) {
-                assert(false)
-            }
+            client.newCall(request).execute()
+        }catch (e: NoDataException) {
+            assert(true)
+        }catch (e:Exception) {
+            assert(false)
+        }
     }
 
     @Test
@@ -144,10 +144,10 @@ class RequestBehavior {
                 .url(httpUrl)
                 .build()
         try{
-                client.newCall(request).execute()
-            }catch (e:Exception) {
-                assert(false)
-            }
+            client.newCall(request).execute()
+        }catch (e:Exception) {
+            assert(false)
+        }
     }
 
     @Test
@@ -164,12 +164,12 @@ class RequestBehavior {
                 .url(httpUrl)
                 .build()
         try{
-                client.newCall(request).execute()
-            }catch (e: TimeoutException) {
-                assert(true)
-            }catch (e:Exception) {
-                assert(false)
-            }
+            client.newCall(request).execute()
+        }catch (e: TimeoutException) {
+            assert(true)
+        }catch (e:Exception) {
+            assert(false)
+        }
     }
 
 }
