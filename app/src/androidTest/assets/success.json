@@ -1,0 +1,57 @@
+{
+  "total":123,
+  "result":[
+    {
+      "category":[
+        "movie"
+      ],
+      "icon_url":"https:\/\/assets.chucknorris.host\/img\/avatar\/chuck-norris.png",
+      "id":"etu5stytromsxrgybafqca",
+      "url":"https:\/\/api.chucknorris.io\/jokes\/etu5stytromsxrgybafqca",
+      "value":"In the X-Men movies, none of the X-Men super-powers are done with special effects. Chuck Norris is the stuntman for every character."
+    },
+    {
+      "category":[
+        "movie"
+      ],
+      "icon_url":"https:\/\/assets.chucknorris.host\/img\/avatar\/chuck-norris.png",
+      "id":"c-3yrrglr0ouxifeo2rzsw",
+      "url":"https:\/\/api.chucknorris.io\/jokes\/c-3yrrglr0ouxifeo2rzsw",
+      "value":"In the movie \u0022The Matrix\u0022, Chuck Norris is the Matrix. If you pay close attention in the green \u0022falling code\u0022 scenes, you can make out the faint texture of his beard."
+    },
+    {
+      "category":null,
+      "icon_url":"https:\/\/assets.chucknorris.host\/img\/avatar\/chuck-norris.png",
+      "id":"hQNnD4sWTR-JVxnKg_RFDw",
+      "url":"https:\/\/api.chucknorris.io\/jokes\/hQNnD4sWTR-JVxnKg_RFDw",
+      "value":"When you watch a movie about Chuck Norris, his hand pops out of the TV and grabs and takes your soul."
+    },
+    {
+      "category":[
+        "movie"
+      ],
+      "icon_url":"https:\/\/assets.chucknorris.host\/img\/avatar\/chuck-norris.png",
+      "id":"qaetpus9twgdkckd70jisw",
+      "url":"https:\/\/api.chucknorris.io\/jokes\/qaetpus9twgdkckd70jisw",
+      "value":"The movie \u0022Delta Force\u0022 was extremely hard to make because Chuck had to downplay his abilities. The first few cuts were completely unbelievable."
+    },
+    {
+      "category":[
+        "movie"
+      ],
+      "icon_url":"https:\/\/assets.chucknorris.host\/img\/avatar\/chuck-norris.png",
+      "id":"uxohgpg8seo16qzc5xnbdw",
+      "url":"https:\/\/api.chucknorris.io\/jokes\/uxohgpg8seo16qzc5xnbdw",
+      "value":"\u0022Brokeback Mountain\u0022 is not just a movie. It\u0027s also what Chuck Norris calls the pile of dead ninjas in his front yard."
+    },
+    {
+      "category":[
+        "movie"
+      ],
+      "icon_url":"https:\/\/assets.chucknorris.host\/img\/avatar\/chuck-norris.png",
+      "id":"te2c64-ls3owmuy5amehtg",
+      "url":"https:\/\/api.chucknorris.io\/jokes\/te2c64-ls3owmuy5amehtg",
+      "value":"The original title for Alien vs. Predator was Alien and Predator vs Chuck Norris. The film was cancelled shortly after going into preproduction. No one would pay nine dollars to see a movie fourteen seconds long."
+    }
+  ]
+}

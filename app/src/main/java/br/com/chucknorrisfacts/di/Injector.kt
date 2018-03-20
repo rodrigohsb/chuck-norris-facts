@@ -10,10 +10,7 @@ import br.com.chucknorrisfacts.home.viewmodel.HomeViewModel
 import br.com.chucknorrisfacts.webservice.NetworkService
 import br.com.chucknorrisfacts.webservice.RequestInterceptor
 import br.com.chucknorrisfacts.webservice.WebServiceAPI
-import com.github.salomonbrys.kodein.Kodein
-import com.github.salomonbrys.kodein.bind
-import com.github.salomonbrys.kodein.instance
-import com.github.salomonbrys.kodein.provider
+import com.github.salomonbrys.kodein.*
 import okhttp3.Interceptor
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor

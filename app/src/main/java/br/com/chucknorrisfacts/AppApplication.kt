@@ -1,6 +1,7 @@
 package br.com.chucknorrisfacts
 
 import android.app.Application
+import android.content.Context
 import br.com.chucknorrisfacts.di.Injector
 import com.github.salomonbrys.kodein.Kodein
 import com.github.salomonbrys.kodein.KodeinAware
@@ -29,3 +30,4 @@ class AppApplication: Application(), KodeinAware {
 
     private fun appDependencies() = Injector(this).dependencies
 }
+fun Context.asApp() = this.applicationContext as AppApplication
